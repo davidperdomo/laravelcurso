@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+<head>
+<meta charset="utf-8">	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/appoptions.js"></script>
+<style type="text/css">
+	
+	.avatar{
+		width: 60px;
+		height: 60px;
+	}
+	.puntero{
+		cursor: pointer;
+	}
+</style>	
+	
+
+</head>
+<body>
+<div class="container" ng-controller="listadoCtrl">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<h1>ng-options</h1>
+		<h4>Repeticiones para elementos</h4> 	 	
+	</div>
+
+	<div class="row">
+		<h5>Con la opcion ng-repeat qeu no carga el por defectp</h5>
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	Seleccione el pais
+</div>
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+	<select ng-model="paisSeleccionado" class="form-control">
+		<option value="">Seleccione</option>
+		<option ng-repeat="pais in paises" value=" {{pais.id}} "> {{pais.nombre}}  </option>
+
+
+	</select>
+</div>
+
+	</div>
+
+<div class="row">
+		<h5>COn la opcion ng-options</h5>
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	Seleccione el pais
+</div>
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+	<select ng-model="paisSeleccionado" class="form-control" ng-options="pais.id as pais.nombre for pais in paises">
+		<option value="">Seleccione</option>
+			</select>
+</div>
+
+	</div>
+
+</div>
+		
+</body>
+</html>

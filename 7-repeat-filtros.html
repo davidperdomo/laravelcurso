@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+<head>
+<meta charset="utf-8">	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/appfiltros.js"></script>
+<style type="text/css">
+	
+	.avatar{
+		width: 60px;
+		height: 60px;
+	}
+</style>	
+	
+
+</head>
+<body>
+
+<div class="container" ng-controller="listadoCtrl">
+
+<h1>FILTROS para ng-repeat</h1>
+<h2>Manejo de datos</h2>
+
+	<hr>
+
+
+<div class="row">
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	Busqueda
+</div>
+	<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+	<!-- ng-model="busqueda" para que nos realeza la busqueda
+	podemos crear un pbjeto para que sea por un campo especifico por ejemplo ng-model="busqueda.nombre" -->
+	<input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="Realice su búsqueda">
+	
+	</div>
+</div>
+<div class="row">
+
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	Seleccione el Genero
+</div>
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+	<select ng-model="busqueda.sexo" class="form-control">
+		<option value=""></option>
+		<option value="hombre">Hombre</option>
+		<option value="mujer">Mujeres</option>
+	</select>
+</div>
+	
+
+
+</div>
+
+		    <table class="table table-stripe">
+	    	<thead>
+	    		<tr>
+	    			<th></th>
+	    			<th>Nombre</th>
+	    			<th>Sexo</th>
+	    			<th>Telefono</th>
+	    			<th>Celular</th>
+
+	    		</tr>
+
+	    	</thead>
+	    	<tbody>
+	    	<!--
+	    	 <tr ng-repeat="persona in personas | filter:busqueda">
+	    	 En el filtro podemos poner filter:nombre si solo queremos que el filtro sea por campo de nombre por ejemplo
+	    	 si se coloca un segundo parametro se requiere anidar con un objeto
+	    		  -->
+	    		<tr ng-repeat="persona in personas | filter:busqueda">
+	    			<td> <img ng-src="img/{{persona.avatar}}" class="avatar img-responsive img-circle" alt=""> </td>
+	    			<td>{{persona.nombre}}</td>
+	    			<td>{{persona.sexo}}</td>
+	    			<td>{{persona.telefono}}</td>
+	    			<td>{{persona.celular}}</td>
+	    			
+	    		</tr>
+
+	    	</tbody>
+
+
+	    </table>
+
+<ul>
+    <li ng-repeat="numero in [1,2,3,4,5,6,7,8,9,10]">
+    	2 x {{numero}} = {{ 2 * numero}}
+
+    </li>
+    
+</ul>
+
+
+
+	{{ listadoProfesores | json}}
+
+</div>
+		
+</body>
+</html>

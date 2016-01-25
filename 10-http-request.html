@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="httpApp">
+<head>
+<meta charset="utf-8">	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/apphttprequest.js"></script>
+<style type="text/css">
+	
+	.avatar{
+		width: 60px;
+		height: 60px;
+	}
+	.puntero{
+		cursor: pointer;
+	}
+</style>	
+	
+
+</head>
+<body>
+<div class="container" ng-controller="mainCtrl">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<h1>$HTTP REQUEST</h1>
+		<h4>Data dinámica</h4> 	 	
+	</div>
+
+	<div class="row">
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	
+	{{ profesores | json}}
+</div>
+
+	</div>
+
+
+</div>
+		
+</body>
+</html>

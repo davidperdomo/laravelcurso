@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="ipApp" ng-controller="mainCtrl">
+<head>
+	<meta charset="utf-8">	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular-route.min.js.map"></script>
+	<script type="text/javascript" src="js/appNGROUTE.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+	<style type="text/css">
+
+		.avatar{
+			width: 60px;
+			height: 60px;
+		}
+		.puntero{
+			cursor: pointer;
+		}
+	</style>	
+	
+
+</head>
+<body >
+
+<div class="menu" ng-include="menuSuperior"></div>
+
+<div class="container">
+	
+	<div ng-view></div>
+
+
+</div
+
+</body>
+</html>

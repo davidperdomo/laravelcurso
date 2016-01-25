@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="ipApp">
+<head>
+	<meta charset="utf-8">	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/appIPs.js"></script>
+	<style type="text/css">
+
+		.avatar{
+			width: 60px;
+			height: 60px;
+		}
+		.puntero{
+			cursor: pointer;
+		}
+	</style>	
+	
+
+</head>
+<body>
+	<div class="container" ng-controller="mainCtrl">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h1>Detectar IPS</h1>
+			<h4>Manejo de recursos Online</h4> 	 	
+		</div>
+
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+			<ul>
+			    <li>IP: {{geo.geoplugin_request}}  </li>
+			    <li>PAIS: {{geo.geoplugin_countryName}} </li>
+			    <li>MONEDA: {{geo.geoplugin_currencyCode}} </li>
+			    <li>TRM: {{geo.geoplugin_currencyConverter}} </li>
+			</ul>
+
+{{ geo | json}}
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+</body>
+</html>

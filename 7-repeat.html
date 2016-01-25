@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+<head>
+<meta charset="utf-8">	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/apprepeat.js"></script>
+	
+</head>
+<body>
+
+<div class="container" ng-controller="listadoCtrl">
+
+<h1>Información que se repite ng-repeat</h1>
+<h2>Manejo de datos</h2>
+
+	<hr>
+
+	<ul>
+	    <li ng-repeat="nombre in listado">  {{nombre}} </li>
+	    </ul>
+
+	    <table class="table table-stripe">
+	    	<thead>
+	    		<tr>
+	    			<th>Nombre</th>
+	    			<th>Edad</th>
+	    			<th>Clase</th>
+
+	    		</tr>
+
+	    	</thead>
+	    	<tbody>
+	    		<tr ng-repeat="profesor in listadoProfesores.profesores">
+	    			<td>{{profesor.Nombre}}</td>
+	    			<td>{{profesor.edad}}</td>
+	    			<td>{{profesor.Clase}}</td>
+	    			
+	    		</tr>
+
+	    	</tbody>
+
+
+	    </table>
+
+<ul>
+    <li ng-repeat="numero in [1,2,3,4,5,6,7,8,9,10]">
+    	2 x {{numero}} = {{ 2 * numero}}
+
+    </li>
+    
+</ul>
+
+
+
+	{{ listadoProfesores | json}}
+
+</div>
+		
+</body>
+</html>

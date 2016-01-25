@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	
+ 	<h1>Filtros</h1>
+ 	<h4>CAmpos que permiten ser parametrizados</h4>	
+
+ 	<p>
+ 	Filtro de texto: {{ "DaviD CamILO"}} 
+ 	<br>
+
+ 	Filtro de texto: {{ "DaviD CamILO" | uppercase}} 
+<br>
+ 	Filtro de texto: {{ "DaviD CamILO" | lowercase}} 
+</p><p>
+
+ 	Filtro de moneda: {{ 1350}} 
+<br>
+ 	Filtro de moneda: {{ 1350 | currency}} 
+<br>
+ 	Filtro de moneda: {{ 1350 | currency:"COL $"}} 
+ 	
+ 	</p>
+<p>
+	FIltro de numero: {{1350000}} <br>
+	FIltro de numero: {{1350000 | number}} <br>
+	
+
+
+</p>
+</div>
+		
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+<head>
+<meta charset="utf-8">	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/appfiltros.js"></script>
+<style type="text/css">
+	
+	.avatar{
+		width: 60px;
+		height: 60px;
+	}
+	.puntero{
+		cursor: pointer;
+	}
+</style>	
+	
+
+</head>
+<body>
+
+<div class="container" ng-controller="listadoCtrl">
+
+<h1>FILTROS para ng-repeat</h1>
+<h2>Manejo de datos</h2>
+
+	<hr>
+
+
+<div class="row">
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	Busqueda
+</div>
+	<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+	<!-- ng-model="busqueda" para que nos realeza la busqueda
+	podemos crear un pbjeto para que sea por un campo especifico por ejemplo ng-model="busqueda.nombre" -->
+	<input type="text" ng-model="busqueda.nombre" class="form-control" placeholder="Realice su búsqueda">
+	
+	</div>
+</div>
+<div class="row">
+
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	Seleccione el Genero
+</div>
+<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+	<select ng-model="busqueda.sexo" class="form-control">
+		<option value=""></option>
+		<option value="hombre">Hombre</option>
+		<option value="mujer">Mujeres</option>
+	</select>
+</div>
+	
+
+
+</div>
+
+		    <table class="table table-stripe">
+	    	<thead>
+	    	<!-- Para hacer que el orden sea por las cabeceras se puede enviar una variable.  esta variable cambia el order de las columnas
+	    	esa variable la debo pasar en la columna que la reciba-->
+	    		<tr>
+	    			<th></th>
+	    			<th><a ng-click="reverse = !reverse" class="puntero" >Nombre</a> </th>
+	    			<th><a ng-click="reverse = !reverse" class="puntero" >Sexo</a> </th>
+	    			
+	    			<th>Telefono</th>
+	    			<th>Celular</th>
+
+	    		</tr>
+
+	    	</thead>
+	    	<tbody>
+	    	<!--
+	    	 <tr ng-repeat="persona in personas | filter:busqueda">
+	    	 En el filtro podemos poner filter:nombre si solo queremos que el filtro sea por campo de nombre por ejemplo
+	    	 si se coloca un segundo parametro se requiere anidar con un objeto
+	    	
+	    		orderBy: 'nombre' esta propiedad recibe una variable por lo que debe de ir en apostrofes. ahi implementamos el campo desde el cual será ordenado
+
+				Si se quiere en invertido es con un - antes de la variable: | orderBy: '-nombre'"
+	    		  -->
+
+	    		<tr ng-repeat="persona in personas | filter:busqueda | orderBy: 'nombre':reverse">
+	    			<td> <img ng-src="img/{{persona.avatar}}" class="avatar img-responsive img-circle" alt=""> </td>
+	    			<td>{{persona.nombre}}</td>
+	    			<td>{{persona.sexo}}</td>
+	    			<td>{{persona.telefono}}</td>
+	    			<td>{{persona.celular}}</td>
+	    			
+	    		</tr>
+
+	    	</tbody>
+
+
+	    </table>
+
+	{{ personas | json}}
+
+</div>
+		
+</body>
+</html>
